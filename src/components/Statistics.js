@@ -16,6 +16,7 @@ const Statistics = ({ transactions, currentMonth, setCurrentMonth }) => {
     expense: { total: 0, count: 0 },
     balance: 0
   });
+  const [actualBalance, setActualBalance] = useState(0);
   const [monthCategoryStats, setMonthCategoryStats] = useState([]);
   const [monthExpenseChartData, setMonthExpenseChartData] = useState(null);
   const [monthIncomeChartData, setMonthIncomeChartData] = useState(null);
@@ -50,6 +51,7 @@ const Statistics = ({ transactions, currentMonth, setCurrentMonth }) => {
 
   useEffect(() => {
     fetchMonthStatistics();
+    fetchActualBalance();
   }, [currentMonth]);
 
   useEffect(() => {
@@ -57,6 +59,17 @@ const Statistics = ({ transactions, currentMonth, setCurrentMonth }) => {
       fetchCustomStatistics();
     }
   }, [customStartDate, customEndDate]);
+
+  // 실제 잔액 조회
+  const fetchActualBalance = async () => {
+    try {
+      const response = await fetch('/api/balance');
+      const data = await response.json();
+      setActualBalance(data.amount || 0);
+    } catch (error) {
+      console.error('Failed to fetch actual balance:', error);
+    }
+  };
 
   const fetchMonthStatistics = async () => {
     try {
@@ -215,9 +228,15 @@ const Statistics = ({ transactions, currentMonth, setCurrentMonth }) => {
         </div>
         
         <div className={`stat-card balance ${stats.balance >= 0 ? 'positive' : 'negative'}`}>
-          <h3>Balance</h3>
+          <h3>Calculated Balance</h3>
           <div className="stat-value">{formatCurrency(Math.abs(stats.balance))}</div>
           <div className="stat-label">{stats.balance >= 0 ? 'Surplus' : 'Deficit'}</div>
+        </div>
+        
+        <div className="stat-card actual-balance">
+          <h3>Actual Balance</h3>
+          <div className="stat-value">{formatCurrency(actualBalance)}</div>
+          <div className="stat-label">Real cash on hand</div>
         </div>
       </div>
 

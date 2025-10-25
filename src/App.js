@@ -5,6 +5,7 @@ import TransactionList from './components/TransactionList';
 import Statistics from './components/Statistics';
 import Calendar from './components/Calendar';
 import Header from './components/Header';
+import BalanceEditor from './components/BalanceEditor';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -95,11 +96,14 @@ function App() {
         )}
         
         {currentView === 'statistics' && (
-          <Statistics 
-            transactions={transactions}
-            currentMonth={currentMonth}
-            setCurrentMonth={setCurrentMonth}
-          />
+          <>
+            <BalanceEditor />
+            <Statistics 
+              transactions={transactions}
+              currentMonth={currentMonth}
+              setCurrentMonth={setCurrentMonth}
+            />
+          </>
         )}
       </main>
     </div>

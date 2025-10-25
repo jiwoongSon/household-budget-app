@@ -321,3 +321,22 @@
     font-size: 1rem;
   }
 }
+
+/* Actual Balance Card Styles */
+.stat-card.actual-balance {
+  border-left: 4px solid #FFD700;
+}
+
+.stat-card.actual-balance h3 {
+  color: #FFD700;
+}
+
+.stat-card.actual-balance .stat-value {
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.stat-card.actual-balance .stat-label {
+  color: #FFD700;
+  opacity: 0.8;
+}

@@ -5,7 +5,10 @@ const Header = ({ currentView, setCurrentView, currentMonth, setCurrentMonth }) 
   return (
     <header className="header">
       <div className="header-content">
-        <h1 className="app-title">💰 Budget Tracker</h1>
+        <div className="app-title-container">
+          <img src="/logo.png" alt="Budget Tracker Logo" className="app-logo" />
+          <h1 className="app-title">Budget Tracker</h1>
+        </div>
         
         <nav className="nav-tabs">
           <button 

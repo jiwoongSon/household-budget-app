@@ -17,6 +17,20 @@
   gap: 20px;
 }
 
+.app-title-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
 .app-title {
   font-size: 2rem;
   font-weight: 700;
@@ -88,6 +102,15 @@
     text-align: center;
   }
   
+  .app-title-container {
+    justify-content: center;
+  }
+  
+  .app-logo {
+    width: 35px;
+    height: 35px;
+  }
+  
   .app-title {
     font-size: 1.5rem;
   }
@@ -105,6 +128,11 @@
 @media (max-width: 480px) {
   .header-content {
     padding: 15px;
+  }
+  
+  .app-logo {
+    width: 30px;
+    height: 30px;
   }
   
   .app-title {

@@ -1,0 +1,195 @@
+.transaction-list {
+  background: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.transaction-list h2 {
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666666;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.empty-state p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.empty-state p:first-child {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background: #111111;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.transaction-item:hover {
+  background: #222222;
+  border-color: #ffffff;
+}
+
+.transaction-item.income {
+  border-left: 4px solid #ffffff;
+}
+
+.transaction-item.expense {
+  border-left: 4px solid #666666;
+}
+
+.transaction-info {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.transaction-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.category {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.amount {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.amount.income {
+  color: #ffffff;
+}
+
+.amount.expense {
+  color: #666666;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.date {
+  font-weight: 500;
+}
+
+.description {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  background: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .transaction-list {
+    padding: 20px;
+  }
+  
+  .transaction-item {
+    padding: 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .transaction-info {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .transaction-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .amount {
+    font-size: 1.1rem;
+  }
+  
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .transaction-list {
+    padding: 15px;
+  }
+  
+  .transaction-item {
+    padding: 12px;
+  }
+  
+  .category {
+    font-size: 1rem;
+  }
+  
+  .amount {
+    font-size: 1rem;
+  }
+  
+  .transaction-details {
+    font-size: 0.8rem;
+  }
+}

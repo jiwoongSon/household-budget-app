@@ -1,0 +1,257 @@
+.calendar {
+  background: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.nav-button {
+  background: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.nav-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.nav-button:active {
+  background: #666666;
+  color: #ffffff;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.day-header {
+  background: #000000;
+  color: #ffffff;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  border-bottom: 1px solid #ffffff;
+}
+
+.calendar-day {
+  background: #000000;
+  color: #ffffff;
+  padding: 10px;
+  min-height: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.calendar-day:hover {
+  background: #222222;
+}
+
+.calendar-day.selected {
+  background: #ffffff;
+  color: #000000;
+}
+
+.calendar-day.empty {
+  background: #000000;
+  cursor: default;
+}
+
+.calendar-day.empty:hover {
+  background: #000000;
+}
+
+.day-number {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.calendar-day.selected .day-number {
+  color: #000000;
+}
+
+.income-indicator {
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.expense-indicator {
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.calendar-day.selected .income-indicator,
+.calendar-day.selected .expense-indicator {
+  color: #000000;
+}
+
+.daily-details {
+  margin-top: 30px;
+  padding: 20px;
+  background: #111111;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+
+.daily-details h3 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.daily-details p {
+  color: #666666;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.daily-transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-transaction {
+  padding: 15px;
+  background: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.daily-transaction.income {
+  border-left: 4px solid #ffffff;
+}
+
+.daily-transaction.expense {
+  border-left: 4px solid #666666;
+}
+
+.transaction-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.category {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.amount {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #666666;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    padding: 20px;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .nav-button {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+  
+  .calendar-day {
+    min-height: 60px;
+    padding: 8px;
+  }
+  
+  .day-header {
+    padding: 10px 5px;
+    font-size: 0.9rem;
+  }
+  
+  .income-indicator,
+  .expense-indicator {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    padding: 15px;
+  }
+  
+  .calendar-header {
+    margin-bottom: 20px;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .nav-button {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+  
+  .calendar-day {
+    min-height: 50px;
+    padding: 5px;
+  }
+  
+  .day-header {
+    padding: 8px 3px;
+    font-size: 0.8rem;
+  }
+  
+  .day-number {
+    font-size: 0.9rem;
+  }
+  
+  .income-indicator,
+  .expense-indicator {
+    font-size: 0.6rem;
+  }
+}
